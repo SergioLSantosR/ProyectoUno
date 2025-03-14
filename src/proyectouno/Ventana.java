@@ -9,9 +9,10 @@ import javax.swing.JTextField;
 public class Ventana extends javax.swing.JFrame{
 
     String info;
+    
     public Ventana() {
         
-        
+       
         initComponents();
            
         
@@ -39,6 +40,7 @@ public class Ventana extends javax.swing.JFrame{
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
+        Etiqueta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,6 +145,11 @@ public class Ventana extends javax.swing.JFrame{
         );
 
         jButton1.setText("Post-Orden");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Post-Fija");
 
@@ -167,7 +174,9 @@ public class Ventana extends javax.swing.JFrame{
                         .addGap(33, 33, 33))
                     .addComponent(jTextField2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Etiqueta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         jPanel4Layout.setVerticalGroup(
@@ -181,7 +190,9 @@ public class Ventana extends javax.swing.JFrame{
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addGap(95, 95, 95)
+                .addGap(26, 26, 26)
+                .addComponent(Etiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69))
         );
@@ -235,10 +246,19 @@ public class Ventana extends javax.swing.JFrame{
         //System.out.println(info);
         ListandStack lista = new ListandStack();
         lista.capturarCadena(info);
+        lista.evaluarExpression(info);
+        
         
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jbtnIngresarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,6 +296,7 @@ public class Ventana extends javax.swing.JFrame{
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Etiqueta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -438,6 +459,14 @@ public class Ventana extends javax.swing.JFrame{
 
     public void setJtxtObtenerExpresion(JTextField jtxtObtenerExpresion) {
         this.jtxtObtenerExpresion = jtxtObtenerExpresion;
+    }
+
+    public void setEtiqueta(JLabel Etiqueta) {
+        this.Etiqueta = Etiqueta;
+    }
+
+    public JLabel getEtiqueta() {
+        return Etiqueta;
     }
 
  
