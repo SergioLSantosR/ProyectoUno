@@ -17,8 +17,7 @@ public class ListandStack {
     Ventana vnt = new Ventana();
     //Stack<Character> pila = new Stack<>();
     String expression = "", reverse = "";
-    String operador;
-    
+    String operador; 
     
     
     public ListandStack(){
